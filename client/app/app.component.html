@@ -1,0 +1,66 @@
+<div class="container">
+ <div class="top_nav">
+      <nav class="navbar navbar-dark bg-light">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">Sujan Sah'b</a>
+    </div>
+    <div class="nav navbar-nav">
+      
+      <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="fa fa-home"></i> Home
+      </a>
+     
+      
+      <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-sign-in"></i> Login
+      </a>
+      <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <i class="fa fa-user-plus"></i> Register
+      </a>
+      <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && !auth.isAdmin">
+        <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
+      </a>
+
+      <a routerLink="/admin" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+        <i class="fa fa-lock"></i> Admin
+      </a>
+      <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <i class="fa fa-sign-out"></i> Logout
+      </a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Currency
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">INR</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">CAD</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Language
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">French</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </div>
+  </nav>  
+    </div>
+
+
+  
+ 
+      <!-- Page content -->
+      
+
+
+   
+  <router-outlet></router-outlet>
+
+</div>

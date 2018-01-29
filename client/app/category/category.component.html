@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="jumbotron">
+	<h1 style="margin-left: 350px;color: black"><b>Category</b></h1>
+	<h3 style="margin-top: 50px;margin-left: 330px;color: black;"> Add Category</h3>
+	<form [formGroup]="categoryForm" (ng-submit)="addCategory()" >
+    	<div class="input-group" [ngClass]="setClassUsername()">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input class="form-control" type="text" name="category" formControlName="category" placeholder="Category Name" autofocus>
+       </div>
+       <div class="input-group" style="margin-top: 20px" [ngClass]="setClassDescription()" >
+ 	   <label for="description" style="color: black">Description:</label>
+	   <textarea class="form-control" type="text" name="text" formControlName="description" rows="5" id="description"></textarea>
+	  </div>
+	  <div>
+	 <input id="photo" formControlName="image" type="file" />
+<!-- button to trigger the file upload when submitted -->
+		<button type="button" class="btn btn-success btn-s" (click)="upload()">
+		Upload with method 2
+		</button>
+	  </div>
+	  <button mat-raised-button (click)="addCategory()" [disabled]="!categoryForm.valid"><i class="fa fa-user-plus"></i>Submit</button>
+     </form>
+	</div>
+	<div>
+		<img src="/assets/86edf243395b6b99a5ce484aa544efae">
+	</div>
+</div>

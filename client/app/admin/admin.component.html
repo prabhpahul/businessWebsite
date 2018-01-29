@@ -1,0 +1,37 @@
+<app-loading [condition]="isLoading"></app-loading>
+
+<app-toast [message]="toast.message"></app-toast>
+
+ <mat-toolbar style="color: black">
+   <button class="buttonClass" mat-button (click)="sidenav.toggle()"><i class="material-icons" style="color: black">apps</i></button><br>
+
+   <p style="color: green; margin-left: 250px"> Welcome To Admin Panel</p>
+   <a routerLink="/account"  style="float: right;margin-right: 20px;margin-left: 300px" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
+      </a>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav #sidenav [mode]="mode.value">
+    <h3 style="color: red"> MENU {{value}}</h3>
+
+    <button mat-button [matMenuTriggerFor]="menu1" style="color: white">Users</button>
+      <mat-menu #menu1="matMenu">
+         <a mat-menu-item  routerLink="/user">User View/Edit</a>
+      </mat-menu>  
+
+     <br>
+     <br>
+
+     <button mat-button [matMenuTriggerFor]="menu" style="color: white">Menu</button>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item  routerLink="/category">Category Add</a>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu> 
+
+   </mat-sidenav>
+
+  <mat-sidenav-content>
+   
+  </mat-sidenav-content>
+</mat-sidenav-container>
