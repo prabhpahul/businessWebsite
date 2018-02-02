@@ -23,7 +23,7 @@ export class AdminComponent implements OnInit {
   isLoading = true;
   constructor(public auth: AuthService,
               public toast: ToastComponent,
-              private userService: UserService
+              private userService: UserService,
               private route:ActivatedRoute) { }
 
   ngOnInit() {
@@ -32,13 +32,7 @@ export class AdminComponent implements OnInit {
   }
 
   getUsers() {
-  console.log(this.route.snapshot)
-     const id = this.route.snapshot._routerState.url;
-     console.log(id)
-     if(id=="/admin"){
-     this.value='no click plesse'
-     console.log('inside if')}
-     else console.log('inside else')
+  
     this.userService.getUsers().subscribe(
       data => this.users = data,
       error => console.log(error),

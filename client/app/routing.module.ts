@@ -9,6 +9,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsersComponent } from './users/users.component';
+import { ItemsComponent } from './items/items.component';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CategoryComponent } from './category/category.component';
 import { AuthGuardLogin } from './services/auth-guard-login.service';
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuardAdmin] },
   { path: 'user', component: UsersComponent, canActivate: [AuthGuardAdmin] },
   { path: 'category', component: CategoryComponent, canActivate: [AuthGuardAdmin] },
+  { path: 'items', component: ItemsComponent, canActivate: [AuthGuardAdmin] },
   
   { path: 'notfound', component: NotFoundComponent },
   { path: '**', redirectTo: '/notfound' },

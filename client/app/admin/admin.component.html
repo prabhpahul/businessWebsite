@@ -1,6 +1,4 @@
-<app-loading [condition]="isLoading"></app-loading>
 
-<app-toast [message]="toast.message"></app-toast>
 
  <mat-toolbar style="color: black">
    <button class="buttonClass" mat-button (click)="sidenav.toggle()"><i class="material-icons" style="color: black">apps</i></button><br>
@@ -13,7 +11,7 @@
 <mat-sidenav-container class="example-container">
 
   <mat-sidenav #sidenav [mode]="mode.value">
-    <h3 style="color: red"> MENU {{value}}</h3>
+    <h3 style="color: white"> MENU {{value}}</h3>
 
     <button mat-button [matMenuTriggerFor]="menu1" style="color: white">Users</button>
       <mat-menu #menu1="matMenu">
@@ -26,7 +24,7 @@
      <button mat-button [matMenuTriggerFor]="menu" style="color: white">Menu</button>
         <mat-menu #menu="matMenu">
           <a mat-menu-item  routerLink="/category">Category Add</a>
-          <button mat-menu-item>Item 2</button>
+          <a mat-menu-item  routerLink="/items">Item Add/Edit</a>
         </mat-menu> 
 
    </mat-sidenav>

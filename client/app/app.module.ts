@@ -22,6 +22,7 @@ import { MaterialModule } from './material.module';
 import { adminLteConf } from './admin-lte.conf';
 import { CategoryComponent } from './category/category.component';
 import { UsersComponent } from './users/users.component';
+import { ItemsComponent } from './items/items.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { UsersComponent } from './users/users.component';
     NotFoundComponent,
     CategoryComponent,
     UsersComponent,
+    ItemsComponent,
   ],
   imports: [
     RoutingModule,
